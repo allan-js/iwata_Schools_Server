@@ -7,9 +7,9 @@ from django.utils.safestring import mark_safe
 from .models import StudentWork
 
 class StudentWorkAdmin(admin.ModelAdmin):
-    list_display = ('student', 'name', 'created', 'file_preview', 'view_full')
+    list_display = ('student', 'name', 'uploaded_on', 'file_preview', 'view_full')
     search_fields = ('name', 'student')
-    list_filter = ('created', 'is_archived')
+    list_filter = ('uploaded_on', 'is_archived')
     list_per_page = 50
 
     def file_preview(self, obj):
