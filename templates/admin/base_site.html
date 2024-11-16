@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Iwata Schools Server Admin') }}{% endblock %}
+ 
+{% block branding %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/admin-prod.css' %}"/>
+{% endblock %}
+<h1 id="site-name" style="font-family: cursive;" ><a href="{% url 'admin:index' %}">{% trans "Iwata Schools Server Admin" %}</a></h1>
+{% endblock %}
+ 
+{% block nav-global %}{% endblock %}
